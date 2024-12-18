@@ -87,7 +87,7 @@ Welcome to **CoreZone**, a simple and user-friendly gym website designed to insp
 
 ## Deployed Link
 
-You can view the live project at: [CoreZone Live Website]("https://corezone.netlify.app/")
+You can view the live project at: [CoreZone Live Website](https://corezone.netlify.app/)
 
 ---
 
