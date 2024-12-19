@@ -7,49 +7,55 @@ body {
   @apply h-full w-full;
 }
 
- /* Navbar */
+/* Navbar */
 #nav {
   @apply flex w-full h-28 px-[3vw] py-5 fixed top-0 gap-5 items-center justify-between z-50;
 }
 
-#nav #logo{
-@apply flex gap-2 items-center
+#nav #logo {
+  @apply flex gap-2 items-center;
 }
 
-#nav h2{
-    @apply text-primaryColor font-bold text-2xl
+#nav h2 {
+  @apply text-primaryColor font-bold text-2xl;
 }
 
-#nav #logo img{
-    @apply flex gap-2 items-center
+#nav #logo img {
+  @apply flex gap-2 items-center;
 }
 
-#nav #menu{
-    @apply flex gap-12 items-center
+#nav #menu {
+  @apply flex gap-12 items-center;
 }
 
-#nav #menu a{
-    @apply text-white hover:text-green-100 text-lg
+#nav #menu a {
+  @apply text-white hover:text-green-100 text-lg;
 }
 
+/* cursor */
+#cursor {
+  box-shadow: #95c11e 20px 20px 150px 50px;
+  box-shadow: #95c11e -20px -20px 150px 50px;
+  @apply h-5 w-5 rounded-full bg-primaryColor fixed z-[999] hidden shadow-primaryColor;
+}
 
 /* video */
-video{
-    @apply object-cover w-full h-full fixed -z-30
+video {
+  @apply object-cover w-full h-full fixed -z-30;
 }
 
 /* main */
-#main{
-    @apply relative w-screen top-0 bg-black bg-opacity-40 z-40
+#main {
+  @apply relative w-screen top-0 bg-black bg-opacity-40 z-40 overflow-hidden;
 }
 
 /* page 1 */
-#main #page1{
-    @apply relative min-h-screen w-full flex flex-col justify-center items-center z-50 gap-6 text-center
+#main #page1 {
+  @apply relative h-screen w-full flex flex-col justify-center items-center z-50 gap-6 text-center;
 }
 
-#main #page1 h1{
-   @apply text-8xl relative font-bold text-white
+#main #page1 h1 {
+  @apply text-8xl relative font-bold text-white;
 }
 
 #main #page1 h1::before {
@@ -61,10 +67,42 @@ video{
   @apply text-primaryColor absolute -top-2 -left-2 z-[98];
 }
 
-#main #page1 h2{
-    @apply text-3xl font-bold text-white
+#main #page1 h2 {
+  @apply text-3xl font-bold text-white;
 }
 
-#main #page1 p{
-    @apply text-white text-center w-2/5
+#main #page1 p {
+  @apply text-white text-center w-2/5;
+}
+
+/* page 2 */
+
+#main #page2 #scroller {
+  @apply flex gap-10 overflow-scroll;
+}
+#scroller::-webkit-scrollbar {
+  @apply hidden;
+}
+#main #page2 #scroller #scroller-in {
+  @apply flex gap-10 whitespace-nowrap;
+  animation-name: textScroll;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+#main #page2 #scroller #scroller-in h4 {
+  -webkit-text-stroke: 2px #95c11e;
+  @apply text-nowrap text-9xl font-bold text-transparent transition-all;
+}
+#main #page2 #scroller #scroller-in h4:hover {
+  @apply text-primaryColor;
+}
+
+@keyframes textScroll {
+  from {
+    @apply translate-x-0;
+  }
+  to {
+    @apply translate-x-full;
+  }
 }

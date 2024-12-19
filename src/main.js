@@ -1,3 +1,11 @@
+const crsr = document.querySelector("#cursor");
+
+document.addEventListener("mousemove", function (e) {
+  crsr.style.display = "block";
+  crsr.style.left = e.x + "px";
+  crsr.style.top = e.y + "px";
+});
+
 gsap.to("#nav", {
   backgroundColor: "#000",
   duration: 0.5,
@@ -14,12 +22,11 @@ gsap.to("#nav", {
 gsap.to("#main", {
   backgroundColor: "#000",
   bgOpacity: 1,
-  duration: 1,
   scrollTrigger: {
     trigger: "#main",
     scroller: "body",
     scrub: 2,
-    start: "top -20%",
-    end: "top -21%",
+    start: "top -25%",
+    end: "top -70%",
   },
 });
