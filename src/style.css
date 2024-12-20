@@ -40,7 +40,7 @@ body {
 
 /* video */
 video {
-  @apply object-cover w-full h-full fixed -z-30;
+  @apply fixed w-full h-full object-cover -z-30;
 }
 
 /* main */
@@ -50,7 +50,7 @@ video {
 
 /* page 1 */
 #main #page1 {
-  @apply relative h-screen w-full flex flex-col justify-center items-center z-50 gap-6 text-center;
+  @apply relative h-screen w-full flex flex-col justify-center items-center z-50 gap-6 text-center overflow-hidden;
 }
 
 #main #page1 h1 {
@@ -77,13 +77,13 @@ video {
 /* page 2 */
 
 #main #page2 #scroller {
-  @apply flex gap-10 overflow-x-scroll py-4;
+  @apply flex gap-10 overflow-scroll py-4;
 }
 #scroller::-webkit-scrollbar {
   @apply hidden;
 }
 #main #page2 #scroller #scroller-in {
-  @apply flex gap-10 whitespace-nowrap ;
+  @apply flex gap-10 whitespace-nowrap;
   animation-name: textScroll;
   animation-duration: 40s;
   animation-timing-function: linear;
@@ -91,12 +91,23 @@ video {
 }
 #main #page2 #scroller #scroller-in h4 {
   -webkit-text-stroke: 2px #95c11e;
-  @apply text-nowrap text-9xl font-bold text-transparent transition-all animate-bounce;
+  @apply text-nowrap text-9xl font-bold text-transparent transition-all;
 }
 #main #page2 #scroller #scroller-in h4:hover {
   @apply text-primaryColor;
 }
-
+#about {
+  @apply relative text-white w-full flex flex-row z-50 gap-10 text-center px-20 mb-10;
+}
+#about #textBox {
+  @apply w-2/3 flex flex-col gap-4;
+}
+#about #textBox h3{
+  @apply text-5xl uppercase font-bold;
+}
+#about img{
+  @apply w-1/6 rounded-lg;
+}
 @keyframes textScroll {
   from {
     @apply translate-x-0;
