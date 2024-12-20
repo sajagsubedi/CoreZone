@@ -34,8 +34,7 @@ body {
 
 /* cursor */
 #cursor {
-  box-shadow: #95c11e 20px 20px 150px 50px;
-  box-shadow: #95c11e -20px -20px 150px 50px;
+  box-shadow: 0 0 150px 150px #96c11e7b;
   @apply h-5 w-5 rounded-full bg-primaryColor fixed z-[999] hidden shadow-primaryColor;
 }
 
@@ -78,13 +77,13 @@ video {
 /* page 2 */
 
 #main #page2 #scroller {
-  @apply flex gap-10 overflow-scroll;
+  @apply flex gap-10 overflow-x-scroll py-4;
 }
 #scroller::-webkit-scrollbar {
   @apply hidden;
 }
 #main #page2 #scroller #scroller-in {
-  @apply flex gap-10 whitespace-nowrap;
+  @apply flex gap-10 whitespace-nowrap ;
   animation-name: textScroll;
   animation-duration: 40s;
   animation-timing-function: linear;
@@ -92,7 +91,7 @@ video {
 }
 #main #page2 #scroller #scroller-in h4 {
   -webkit-text-stroke: 2px #95c11e;
-  @apply text-nowrap text-9xl font-bold text-transparent transition-all;
+  @apply text-nowrap text-9xl font-bold text-transparent transition-all animate-bounce;
 }
 #main #page2 #scroller #scroller-in h4:hover {
   @apply text-primaryColor;
@@ -103,6 +102,6 @@ video {
     @apply translate-x-0;
   }
   to {
-    @apply translate-x-full;
+    @apply -translate-x-full;
   }
 }
