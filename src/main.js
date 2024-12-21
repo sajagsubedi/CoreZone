@@ -26,7 +26,7 @@ gsap.to("#main", {
     trigger: "#main",
     scroller: "body",
     scrub: 2,
-    start: "top -25%",
+    start: "top -20%",
     end: "top -70%",
   },
 });

@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>CoreZone</title>
   </head>
   <body>
@@ -15,8 +16,8 @@
       </div>
       <ul id="menu">
         <li class="navLinkItem">
-          <a href="/" class="navLink">Home</a>
-          <a href="/" class="hoverLink">Home</a>
+          <a href="#" class="navLink">Home</a>
+          <a href="#" class="hoverLink">Home</a>
         </li>
         <li class="navLinkItem">
           <a href="#about" class="navLink">About</a>
@@ -92,16 +93,18 @@
           <img src="/assets/about-2.jpg" alt="img" />
         </div>
       </section>
-
+      <div
+      class="linearGradientBg"
+    ></div>
       <!-- Services section -->
       <section id="services">
         <div class="max-w-7xl mx-auto">
-          <div id="serviceTop">
+          <div class="sectionTop">
             <h3
-            >
+             class="sectionHeading">
               SERVICES WE OFFER
             </h2>
-            <p>
+            <p class="sectionHeadingParagraph">
               Transform Your Fitness Journey with CoreZone
             </p>
           </div>
@@ -174,6 +177,61 @@
           </div>
         </div>
       </section>
+
+      <!-- Plans section -->
+<section id="plans">
+  <div class="sectionTop">
+    <h1 class="sectionHeading">OUR PLANS</h1>
+    <p class="sectionHeadingParagraph">Choose the perfect plan for your fitness goals.</p>
+  </div>
+  <div class="plansGrid">
+    <div class="planCard basicPlan">
+      <h3 class="planTitle">BASIC</h3>
+      <div class="planPrice">
+        <span class="priceAmount">$29</span>
+        <span class="priceDuration">/monthly</span>
+      </div>
+      <p class="planDescription">Start your fitness journey with essential tools and guidance to build a strong foundation</p>
+      <ul class="planFeatures">
+        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>Access to standard gym equipment</li>
+        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>Monthly fitness progress tracking</li>
+        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>Personalized workout suggestions</li>
+      </ul>
+    </div>
+
+    <!-- Standard Plan -->
+    <div class="planCard standardPlan">
+      <h3 class="planTitle">STANDARD</h3>
+      <div class="planPrice">
+        <span class="priceAmount">$49</span>
+        <span class="priceDuration">/monthly</span>
+      </div>
+      <p class="planDescription">Take your workouts to the next level with advanced facilities and group classes to stay motivated.
+        <ul class="planFeatures">
+        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>All features from Basic Plan</li>
+        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>Group fitness classes included</li>
+        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>One consultation with a fitness coach monthly</li>
+      </ul>
+    </div>
+
+    <!-- Premium Plan -->
+    <div class="planCard premiumPlan">
+      <h3 class="planTitle">PREMIUM</h3>
+      <div class="planPrice">
+        <span class="priceAmount">$55</span>
+        <span class="priceDuration">/monthly</span>
+      </div>
+      <p class="planDescription">Achieve your ultimate fitness goals with exclusive perks, personal training, and tailored nutrition.</p>
+      <ul class="planFeatures">
+        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>All features from Standard Plan</li>
+        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>Unlimited personal training sessions</li>
+        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>Nutrition and meal planning assistance</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+      
     </main>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
@@ -187,6 +245,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

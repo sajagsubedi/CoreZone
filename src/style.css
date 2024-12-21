@@ -8,9 +8,32 @@ body {
 }
 
 /* utility classes */
-.highlightedText{
+.highlightedText {
   @apply text-primaryColor font-bold;
 }
+
+.sectionTop {
+  @apply text-center mb-16;
+}
+.sectionHeading {
+  @apply text-6xl font-bold tracking-wider text-primaryColor mb-4;
+}
+.sectionHeadingParagraph {
+  @apply text-white text-xl opacity-90;
+}
+
+/* Background */
+.linearGradientBg {
+  @apply fixed top-0 inset-0 blur-xl h-screen;
+  background: linear-gradient(
+    143.6deg,
+    rgba(7, 8, 11, 0) 20.79%,
+    rgba(72, 249, 143, 0.15) 40.92%,
+    rgba(9, 9, 9, 0) 70.35%
+  );
+  z-index: -1;
+}
+
 
 /* Navbar */
 #nav {
@@ -34,25 +57,25 @@ body {
 }
 
 #nav #menu .navLinkItem {
-  @apply flex flex-col h-8 overflow-hidden; 
+  @apply flex flex-col h-8 overflow-hidden;
 }
 
 #nav #menu .navLink {
-  @apply text-white text-lg  top-0 transition-transform duration-300; 
+  @apply text-white text-lg  top-0 transition-transform duration-300;
 }
 
 #nav #menu .hoverLink {
   @apply text-primaryColor text-lg p-1
-   bottom-0 transition-transform duration-300 border-b border-primaryColor; 
-  transform: translateY(100%); 
-} 
+   bottom-0 transition-transform duration-300 border-b border-primaryColor;
+  transform: translateY(100%);
+}
 
 #nav #menu .navLinkItem:hover .navLink {
-  transform: translateY(-200%); 
+  transform: translateY(-200%);
 }
 
 #nav #menu .navLinkItem:hover .hoverLink {
-  transform: translateY(-100%); 
+  transform: translateY(-100%);
 }
 
 /* cursor */
@@ -68,12 +91,12 @@ video {
 
 /* main */
 #main {
-  @apply relative w-screen top-0 bg-black bg-opacity-40 z-40 overflow-hidden;
+  @apply relative w-screen top-0 z-40 overflow-hidden;
 }
 
 /* page 1 */
 #main #page1 {
-  @apply relative h-screen w-full flex flex-col justify-center items-center z-50 gap-6 text-center overflow-hidden;
+  @apply relative h-screen w-full bg-black bg-opacity-10 flex flex-col justify-center items-center z-50 gap-6 text-center overflow-hidden;
 }
 
 #main #page1 h1 {
@@ -137,7 +160,7 @@ video {
 }
 
 #about #textBox {
-  @apply w-[60%] flex flex-col gap-16 h-64 ;
+  @apply w-[60%] flex flex-col gap-16 h-64;
 }
 
 #about #textBox h3 {
@@ -172,18 +195,6 @@ video {
   @apply max-w-7xl mx-auto;
 }
 
-#services #serviceTop {
-  @apply text-center mb-16;
-}
-
-#services #serviceTop h3 {
-  @apply text-5xl font-bold tracking-wider text-primaryColor mb-4;
-}
-
-#services #serviceTop p {
-  @apply text-white text-xl opacity-90;
-}
-
 #services #serviceGrid {
   @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16;
 }
@@ -198,4 +209,51 @@ video {
 
 #services div.serviceCard .cardText {
   @apply text-white text-sm leading-relaxed opacity-90;
+}
+
+/* Plans section */
+#plans {
+  @apply min-h-screen p-8;
+}
+.plansGrid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto;
+}
+.planCard {
+  @apply rounded-3xl p-8 h-full text-white hover:scale-105 transition-all ease-in duration-75;
+}
+.basicPlan {
+  @apply bg-gray-950;
+}
+.standardPlan {
+  @apply bg-lime-300 text-black;
+}
+.premiumPlan {
+  @apply bg-gray-950;
+}
+.planTitle {
+  @apply text-2xl font-bold mb-4;
+}
+.planPrice {
+  @apply flex items-baseline mb-4 text-primaryColor;
+}
+.priceAmount {
+  @apply text-5xl font-bold;
+}
+.priceDuration {
+  @apply ml-2;
+}
+.planDescription {
+  @apply mb-6;
+}
+.planFeatures {
+  @apply space-y-4;
+}
+.planFeatures li i{
+  @apply text-primaryColor;
+}
+.standardPlan .planFeatures li i{
+  @apply text-green-900
+}
+.standardPlan .planPrice{
+  @apply text-green-900
 }
