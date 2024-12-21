@@ -14,11 +14,26 @@
         <h2>CoreZone</h2>
       </div>
       <ul id="menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/">About</a></li>
-        <li><a href="/">Services</a></li>
-        <li><a href="/">Plans</a></li>
-        <li><a href="/">Contact</a></li>
+        <li class="navLinkItem">
+          <a href="/" class="navLink">Home</a>
+          <a href="/" class="hoverLink">Home</a>
+        </li>
+        <li class="navLinkItem">
+          <a href="#about" class="navLink">About</a>
+          <a href="#about" class="hoverLink">About</a>
+        </li>
+        <li class="navLinkItem">
+          <a href="#services" class="navLink">Services</a>
+          <a href="#services" class="hoverLink">Services</a>
+        </li>
+        <li class="navLinkItem">
+          <a href="#plans" class="navLink">Plans</a>
+          <a href="#plans" class="hoverLink">Plans</a>
+        </li>
+        <li class="navLinkItem">
+          <a href="#contact" class="navLink">Contact</a>
+          <a href="#contact" class="hoverLink">Contact</a>
+        </li>
       </ul>
     </nav>
     <div id="cursor"></div>
@@ -56,19 +71,26 @@
         </div>
       </section>
       <section id="about">
-        <img src="/assets/about-1.jpg" alt="img" />
+        <div class="imgDiv">
+          <div class="overlay">
+            <h5>Elevate Your Fitness Journey</h5>
+            <p>Discover cutting-edge gym equipment designed to help you achieve peak performance.</p>
+          </div>
+          <img src="/assets/about-1.jpg" alt="img" />
+        </div>
         <div id="textBox">
           <h3>About Us</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum
-            odio quia, molestiae laboriosam eum vero itaque consequuntur
-            voluptatem suscipit illum excepturi repellendus a nostrum natus.
-            Quisquam sit facilis et dignissimos delectus reiciendis natus quos
-            dolor corrupti praesentium soluta deleniti illum expedita, numquam
-            sapiente, ullam enim quo, dolore autem! Soluta, id.
+            Welcome to <span class="highlightedText"> CoreZone</span>, your ultimate fitness destination! At CoreZone, we provide a vibrant, inclusive space with state-of-the-art equipment, certified trainers, and diverse classes like yoga, HIIT, and strength training to help you achieve your fitness goals. Whether you're a beginner or an experienced athlete, our clean, modern facilities and supportive community are here to inspire and empower you every step of the way. <span class="highlightedText"> Move. Train. Thrive.</span>
           </p>
         </div>
-        <img src="/assets/about-2.jpg" alt="img" />
+        <div class="imgDiv">
+          <div class="overlay">
+            <h5>Lift. Conquer. Repeat.</h5>
+            <p>From beginners to pros, this is where champions are forged.</p>
+          </div>
+          <img src="/assets/about-2.jpg" alt="img" />
+        </div>
       </section>
 
       <!-- Services section -->

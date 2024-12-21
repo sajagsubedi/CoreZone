@@ -4,7 +4,12 @@
 
 html,
 body {
-  @apply h-full w-full;
+  @apply h-full w-full scroll-smooth;
+}
+
+/* utility classes */
+.highlightedText{
+  @apply text-primaryColor font-bold;
 }
 
 /* Navbar */
@@ -28,8 +33,26 @@ body {
   @apply flex gap-12 items-center;
 }
 
-#nav #menu a {
-  @apply text-white hover:text-green-600 text-lg;
+#nav #menu .navLinkItem {
+  @apply flex flex-col h-8 overflow-hidden; 
+}
+
+#nav #menu .navLink {
+  @apply text-white text-lg  top-0 transition-transform duration-300; 
+}
+
+#nav #menu .hoverLink {
+  @apply text-primaryColor text-lg p-1
+   bottom-0 transition-transform duration-300 border-b border-primaryColor; 
+  transform: translateY(100%); 
+} 
+
+#nav #menu .navLinkItem:hover .navLink {
+  transform: translateY(-200%); 
+}
+
+#nav #menu .navLinkItem:hover .hoverLink {
+  transform: translateY(-100%); 
 }
 
 /* cursor */
@@ -108,21 +131,43 @@ video {
   }
 }
 
-
 /* About */
 #about {
-  @apply relative text-white w-full flex flex-row z-50 gap-10 text-center px-20 mb-10;
+  @apply text-white w-full relative items-center flex flex-row z-50 gap-10 text-center px-20 py-20 justify-between;
 }
+
 #about #textBox {
-  @apply w-2/3 flex flex-col gap-4;
+  @apply w-[60%] flex flex-col gap-16 h-64 ;
 }
+
 #about #textBox h3 {
   @apply text-5xl uppercase font-bold;
 }
-#about img {
-  @apply w-1/6 rounded-lg;
+
+#about .imgDiv {
+  @apply w-64 h-64 rounded-2xl overflow-hidden relative;
 }
 
+#about .imgDiv img {
+  @apply absolute h-full w-full top-0 z-20;
+}
+
+#about .imgDiv .overlay {
+  @apply flex p-3 opacity-0 z-50 relative h-full flex-col w-full top-0  justify-end transition-all ease-linear duration-[600ms];
+}
+
+#about .imgDiv:hover .overlay {
+  @apply opacity-100 bg-primaryColor;
+}
+
+#about .imgDiv .overlay h5 {
+  @apply text-black font-bold text-2xl;
+}
+#about .imgDiv .overlay p {
+  @apply text-sm text-black;
+}
+
+/* Services */
 #services {
   @apply max-w-7xl mx-auto;
 }
