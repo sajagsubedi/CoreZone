@@ -29,7 +29,7 @@ body {
 }
 
 #nav #menu a {
-  @apply text-white hover:text-green-100 text-lg;
+  @apply text-white hover:text-green-600 text-lg;
 }
 
 /* cursor */
@@ -76,6 +76,7 @@ video {
 
 /* page 2 */
 
+/* Scroller */
 #main #page2 #scroller {
   @apply flex gap-10 overflow-scroll py-4;
 }
@@ -96,23 +97,60 @@ video {
 #main #page2 #scroller #scroller-in h4:hover {
   @apply text-primaryColor;
 }
+
+/* Replace @apply with equivalent CSS */
+@keyframes textScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+/* About */
 #about {
   @apply relative text-white w-full flex flex-row z-50 gap-10 text-center px-20 mb-10;
 }
 #about #textBox {
   @apply w-2/3 flex flex-col gap-4;
 }
-#about #textBox h3{
+#about #textBox h3 {
   @apply text-5xl uppercase font-bold;
 }
-#about img{
+#about img {
   @apply w-1/6 rounded-lg;
 }
-@keyframes textScroll {
-  from {
-    @apply translate-x-0;
-  }
-  to {
-    @apply -translate-x-full;
-  }
+
+#services {
+  @apply max-w-7xl mx-auto;
+}
+
+#services #serviceTop {
+  @apply text-center mb-16;
+}
+
+#services #serviceTop h3 {
+  @apply text-5xl font-bold tracking-wider text-primaryColor mb-4;
+}
+
+#services #serviceTop p {
+  @apply text-white text-xl opacity-90;
+}
+
+#services #serviceGrid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16;
+}
+
+#services div.serviceCard {
+  @apply bg-black bg-opacity-40 rounded-xl p-8 transform transition-all hover:shadow-[0_0_30px_rgba(34,197,94,0.3)] border border-gray-800 hover:border-transparent duration-300 hover:scale-105;
+}
+
+#services div.serviceCard .cardTitle {
+  @apply text-xl font-bold text-primaryColor mb-4;
+}
+
+#services div.serviceCard .cardText {
+  @apply text-white text-sm leading-relaxed opacity-90;
 }
