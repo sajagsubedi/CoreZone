@@ -13,10 +13,10 @@ body {
 }
 
 .sectionTop {
-  @apply text-center mb-16;
+  @apply text-center md:mb-16 mb-10;
 }
 .sectionHeading {
-  @apply text-6xl font-bold tracking-wider text-primaryColor mb-4;
+  @apply md:text-6xl text-5xl font-bold tracking-wider text-primaryColor mb-4 uppercase;
 }
 .sectionHeadingParagraph {
   @apply text-white text-xl opacity-90;
@@ -93,7 +93,7 @@ body {
 /* cursor */
 #cursor {
   box-shadow: 0 0 150px 150px #96c11e7b;
-  @apply h-5 w-5 rounded-full bg-primaryColor fixed z-[999] hidden shadow-primaryColor;
+  @apply h-5 w-5 rounded-full bg-primaryColor fixed z-[999] hidden invisible md:visible shadow-primaryColor;
 }
 
 /* video */
@@ -108,11 +108,11 @@ video {
 
 /* page 1 */
 #main #page1 {
-  @apply relative h-screen w-full bg-black bg-opacity-10 flex flex-col justify-center items-center z-50 gap-6 text-center overflow-hidden;
+  @apply relative min-h-screen py-[10vh] px-5 w-full bg-black bg-opacity-10 flex flex-col justify-center items-center z-50 gap-6 text-center overflow-hidden;
 }
 
 #main #page1 h1 {
-  @apply text-8xl relative font-bold text-white;
+  @apply md:text-8xl text-7xl relative font-bold text-white;
 }
 
 #main #page1 h1::before {
@@ -129,7 +129,7 @@ video {
 }
 
 #main #page1 p {
-  @apply text-white text-center w-2/5;
+  @apply text-white text-justify md:text-center md:w-2/5;
 }
 
 /* page 2 */
@@ -150,7 +150,7 @@ video {
 }
 #main #page2 #scroller #scroller-in h4 {
   -webkit-text-stroke: 2px #95c11e;
-  @apply text-nowrap text-9xl font-bold text-transparent transition-all;
+  @apply text-nowrap md:text-9xl text-8xl text-transparent font-bold  transition-all;
 }
 #main #page2 #scroller #scroller-in h4:hover {
   @apply text-primaryColor;
@@ -168,15 +168,14 @@ video {
 
 /* About */
 #about {
-  @apply text-white w-full relative items-center flex flex-col md:flex-row z-50 gap-10 text-center px-4 md:px-20 py-20 justify-between;
+  @apply text-white w-full relative items-center flex flex-col z-50 text-center px-4 md:px-20 py-20 justify-between;
 }
 
+#about #aboutContent{
+  @apply flex flex-col md:flex-row w-full items-center gap-5;
+}
 #about #textBox {
-  @apply w-full md:w-[60%] flex flex-col gap-16 min-h-64;
-}
-
-#about #textBox h3 {
-  @apply text-5xl uppercase font-bold;
+  @apply w-full md:w-[60%] min-h-64  flex items-center;
 }
 
 #about #textBox p {
