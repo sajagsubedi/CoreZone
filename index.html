@@ -5,17 +5,28 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>CoreZone</title>
   </head>
   <body>
     <nav id="nav">
-      <div id="logo">
-        <img src="logo.png" alt="logo" class="h-12 w-auto" />
-        <h2>CoreZone</h2>
+      <div id="phoneVisible">
+        <div id="logo">
+          <img src="logo.png" alt="logo" class="h-12 w-auto" />
+          <h2>CoreZone</h2>
+        </div>
+        <div id="menuToggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
       </div>
       <ul id="menu">
-        <li class="navLinkItem">
+        <li class="navLinkItem mt-2 md:mt-0">
           <a href="#" class="navLink">Home</a>
           <a href="#" class="hoverLink">Home</a>
         </li>
@@ -31,7 +42,7 @@
           <a href="#plans" class="navLink">Plans</a>
           <a href="#plans" class="hoverLink">Plans</a>
         </li>
-        <li class="navLinkItem">
+        <li class="navLinkItem mb-2 md:mb-0">
           <a href="#contact" class="navLink">Contact</a>
           <a href="#contact" class="hoverLink">Contact</a>
         </li>
@@ -50,6 +61,8 @@
           goals.
         </p>
       </section>
+      <div class="linearGradientBg"></div>
+
       <section
         class="relative mb-10 text-white w-full flex flex-col z-50 gap-6 text-center"
         id="page2"
@@ -75,14 +88,24 @@
         <div class="imgDiv">
           <div class="overlay">
             <h5>Elevate Your Fitness Journey</h5>
-            <p>Discover cutting-edge gym equipment designed to help you achieve peak performance.</p>
+            <p>
+              Discover cutting-edge gym equipment designed to help you achieve
+              peak performance.
+            </p>
           </div>
           <img src="/assets/about-1.jpg" alt="img" />
         </div>
         <div id="textBox">
           <h3>About Us</h3>
           <p>
-            Welcome to <span class="highlightedText"> CoreZone</span>, your ultimate fitness destination! At CoreZone, we provide a vibrant, inclusive space with state-of-the-art equipment, certified trainers, and diverse classes like yoga, HIIT, and strength training to help you achieve your fitness goals. Whether you're a beginner or an experienced athlete, our clean, modern facilities and supportive community are here to inspire and empower you every step of the way. <span class="highlightedText"> Move. Train. Thrive.</span>
+            Welcome to <span class="highlightedText"> CoreZone</span>, your
+            ultimate fitness destination! At CoreZone, we provide a vibrant,
+            inclusive space with state-of-the-art equipment, certified trainers,
+            and diverse classes like yoga, HIIT, and strength training to help
+            you achieve your fitness goals. Whether you're a beginner or an
+            experienced athlete, our clean, modern facilities and supportive
+            community are here to inspire and empower you every step of the way.
+            <span class="highlightedText"> Move. Train. Thrive.</span>
           </p>
         </div>
         <div class="imgDiv">
@@ -93,82 +116,53 @@
           <img src="/assets/about-2.jpg" alt="img" />
         </div>
       </section>
-      <div
-      class="linearGradientBg"
-    ></div>
       <!-- Services section -->
       <section id="services">
-        <div class="max-w-7xl mx-auto">
+        <div id="serviceContainer">
           <div class="sectionTop">
-            <h3
-             class="sectionHeading">
-              SERVICES WE OFFER
-            </h2>
+            <h3 class="sectionHeading">SERVICES WE OFFER</h3>
             <p class="sectionHeadingParagraph">
               Transform Your Fitness Journey with CoreZone
             </p>
           </div>
           <div id="serviceGrid">
-            <div class="serviceCard"
-            >
-              <h4 class="cardTitle">
-                Personal Training
-              </h4>
+            <div class="serviceCard">
+              <h4 class="cardTitle">Personal Training</h4>
               <p class="cardText">
                 One-on-one customized workout plans with expert trainers
                 dedicated to your fitness goals.
               </p>
             </div>
-            <div
-           class="serviceCard"
-            >
-              <h4 class="cardTitle">
-                Group Classes
-              </h4>
+            <div class="serviceCard">
+              <h4 class="cardTitle">Group Classes</h4>
               <p class="cardText">
                 High-energy group sessions led by certified instructors in
                 various fitness disciplines.
               </p>
             </div>
-            <div
-              class="serviceCard"
-            >
-              <h4 class="cardTitle">
-                Mindfulness &amp; Wellness
-              </h4>
+            <div class="serviceCard">
+              <h4 class="cardTitle">Mindfulness &amp; Wellness</h4>
               <p class="cardText">
                 Holistic programs combining physical fitness with mental
                 well-being and stress management.
               </p>
             </div>
-            <div
-              class="serviceCard"
-            >
-              <h4 class="cardTitle">
-                Cardio Training
-              </h4>
+            <div class="serviceCard">
+              <h4 class="cardTitle">Cardio Training</h4>
               <p class="cardText">
                 State-of-the-art cardio equipment and specialized programs for
                 heart health and endurance.
               </p>
             </div>
-            <div
-              class="serviceCard"
-            >
-              <h4 class="cardTitle">
-                HIIT Workouts
-              </h4>
+            <div class="serviceCard">
+              <h4 class="cardTitle">HIIT Workouts</h4>
               <p class="cardText">
                 High-Intensity Interval Training sessions designed for maximum
                 calorie burn and efficiency.
               </p>
             </div>
-            <div
-              class="serviceCard"
-            >
-              <h4 class="cardTitle">
-                Yoga &amp; Flexibility
-              </h4>
+            <div class="serviceCard">
+              <h4 class="cardTitle">Yoga &amp; Flexibility</h4>
               <p class="cardText">
                 Expert-led yoga classes focusing on flexibility, strength, and
                 mind-body connection.
@@ -179,59 +173,95 @@
       </section>
 
       <!-- Plans section -->
-<section id="plans">
-  <div class="sectionTop">
-    <h1 class="sectionHeading">OUR PLANS</h1>
-    <p class="sectionHeadingParagraph">Choose the perfect plan for your fitness goals.</p>
-  </div>
-  <div class="plansGrid">
-    <div class="planCard basicPlan">
-      <h3 class="planTitle">BASIC</h3>
-      <div class="planPrice">
-        <span class="priceAmount">$29</span>
-        <span class="priceDuration">/monthly</span>
-      </div>
-      <p class="planDescription">Start your fitness journey with essential tools and guidance to build a strong foundation</p>
-      <ul class="planFeatures">
-        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>Access to standard gym equipment</li>
-        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>Monthly fitness progress tracking</li>
-        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>Personalized workout suggestions</li>
-      </ul>
-    </div>
+      <section id="plans">
+        <div class="sectionTop">
+          <h1 class="sectionHeading">OUR PLANS</h1>
+          <p class="sectionHeadingParagraph">
+            Choose the perfect plan for your fitness goals.
+          </p>
+        </div>
+        <div class="plansGrid">
+          <div class="planCard basicPlan">
+            <h3 class="planTitle">BASIC</h3>
+            <div class="planPrice">
+              <span class="priceAmount">$29</span>
+              <span class="priceDuration">/monthly</span>
+            </div>
+            <p class="planDescription">
+              Start your fitness journey with essential tools and guidance to
+              build a strong foundation
+            </p>
+            <ul class="planFeatures">
+              <li>
+                <span class="mr-3"><i class="fa-solid fa-check"></i></span
+                >Access to standard gym equipment
+              </li>
+              <li>
+                <span class="mr-3"><i class="fa-solid fa-check"></i></span
+                >Monthly fitness progress tracking
+              </li>
+              <li>
+                <span class="mr-3"><i class="fa-solid fa-check"></i></span
+                >Personalized workout suggestions
+              </li>
+            </ul>
+          </div>
 
-    <!-- Standard Plan -->
-    <div class="planCard standardPlan">
-      <h3 class="planTitle">STANDARD</h3>
-      <div class="planPrice">
-        <span class="priceAmount">$49</span>
-        <span class="priceDuration">/monthly</span>
-      </div>
-      <p class="planDescription">Take your workouts to the next level with advanced facilities and group classes to stay motivated.
-        <ul class="planFeatures">
-        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>All features from Basic Plan</li>
-        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>Group fitness classes included</li>
-        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>One consultation with a fitness coach monthly</li>
-      </ul>
-    </div>
+          <!-- Standard Plan -->
+          <div class="planCard standardPlan">
+            <h3 class="planTitle">STANDARD</h3>
+            <div class="planPrice">
+              <span class="priceAmount">$49</span>
+              <span class="priceDuration">/monthly</span>
+            </div>
+            <p class="planDescription">
+              Take your workouts to the next level with advanced facilities and
+              group classes to stay motivated.
+            </p>
+            <ul class="planFeatures">
+              <li>
+                <span class="mr-3"><i class="fa-solid fa-check"></i></span>All
+                features from Basic Plan
+              </li>
+              <li>
+                <span class="mr-3"><i class="fa-solid fa-check"></i></span>Group
+                fitness classes included
+              </li>
+              <li>
+                <span class="mr-3"><i class="fa-solid fa-check"></i></span>One
+                consultation with a fitness coach monthly
+              </li>
+            </ul>
+          </div>
 
-    <!-- Premium Plan -->
-    <div class="planCard premiumPlan">
-      <h3 class="planTitle">PREMIUM</h3>
-      <div class="planPrice">
-        <span class="priceAmount">$55</span>
-        <span class="priceDuration">/monthly</span>
-      </div>
-      <p class="planDescription">Achieve your ultimate fitness goals with exclusive perks, personal training, and tailored nutrition.</p>
-      <ul class="planFeatures">
-        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>All features from Standard Plan</li>
-        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>Unlimited personal training sessions</li>
-        <li><span class="mr-3"><i class="fa-solid fa-check"></i></span>Nutrition and meal planning assistance</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-      
+          <!-- Premium Plan -->
+          <div class="planCard premiumPlan">
+            <h3 class="planTitle">PREMIUM</h3>
+            <div class="planPrice">
+              <span class="priceAmount">$55</span>
+              <span class="priceDuration">/monthly</span>
+            </div>
+            <p class="planDescription">
+              Achieve your ultimate fitness goals with exclusive perks, personal
+              training, and tailored nutrition.
+            </p>
+            <ul class="planFeatures">
+              <li>
+                <span class="mr-3"><i class="fa-solid fa-check"></i></span>All
+                features from Standard Plan
+              </li>
+              <li>
+                <span class="mr-3"><i class="fa-solid fa-check"></i></span
+                >Unlimited personal training sessions
+              </li>
+              <li>
+                <span class="mr-3"><i class="fa-solid fa-check"></i></span
+                >Nutrition and meal planning assistance
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
@@ -245,7 +275,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
