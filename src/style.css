@@ -94,9 +94,11 @@ body {
 #cursor {
   box-shadow: 0 0 150px 150px #96c11e4a;
   @apply h-5 w-5 rounded-full bg-primaryColor fixed z-[999] hidden invisible md:visible shadow-primaryColor transition-all ease-in duration-75;
+  pointer-events: none;
 }
 #cursor.hoverCursor {
-  @apply h-20 w-20 bg-transparent shadow-none border-4 border-primaryColor;
+  @apply h-20 w-20 bg-transparent shadow-none border-4  border-primaryColor -translate-x-[50%] -translate-y-[50%];
+  pointer-events: none;
 }
 /* video */
 video {
@@ -132,6 +134,14 @@ video {
 
 #main #page1 p {
   @apply text-white text-justify md:text-center md:w-2/5;
+}
+/* Down Arrow */
+#main #page1 #downArrow{
+  @apply hidden md:flex h-56 w-56 rounded-full text-white border-2 border-primaryColor justify-center items-center absolute bottom-0 left-0 m-6 hover:scale-50 hover:bg-primaryColor z-[99] transition-all ease-in duration-100;
+  pointer-events: all;
+}
+#main #page1 #downArrow i{
+  @apply text-5xl
 }
 
 /* page 2 */
@@ -279,11 +289,12 @@ video {
 }
 
 /* Contact section */
-#contact-section {
+#contact {
   @apply relative min-h-screen  text-white py-20 px-4;
 }
 
-#background-blur-top, #background-blur-bottom {
+#background-blur-top,
+#background-blur-bottom {
   @apply absolute bg-lime-500/10 rounded-full blur-3xl;
 }
 
@@ -298,7 +309,6 @@ video {
 #contact-container {
   @apply max-w-7xl mx-auto relative;
 }
-
 
 #contact-content {
   @apply grid grid-cols-1 lg:grid-cols-2 gap-12;
@@ -359,4 +369,3 @@ video {
 #submit-button {
   @apply w-full bg-gradient-to-r from-lime-500 to-primaryColor text-white py-3 px-6 rounded-lg font-semibold hover:from-lime-600 hover:to-lime-700 transition-all duration-300;
 }
-

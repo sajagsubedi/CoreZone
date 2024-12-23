@@ -7,14 +7,14 @@ document.addEventListener("mousemove", function (e) {
   crsr.style.top = e.y + "px";
 });
 
-// navLinks.forEach((navlink) => {
-//   navlink.addEventListener("mouseenter", (e) => {
-//     crsr.classList.add("hoverCursor");
-//   });
-//   navlink.addEventListener("mouseout", (e) => {
-//     crsr.classList.remove("hoverCursor");
-//   });
-// });
+navLinks.forEach((navlink) => {
+  navlink.addEventListener("mouseenter", (e) => {
+    crsr.classList.add("hoverCursor");
+  });
+  navlink.addEventListener("mouseout", (e) => {
+    crsr.classList.remove("hoverCursor");
+  });
+});
 gsap.to("#nav", {
   backgroundColor: "#000",
   duration: 0.5,
