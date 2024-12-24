@@ -93,7 +93,7 @@ body {
 /* cursor */
 #cursor {
   box-shadow: 0 0 150px 150px #96c11e4a;
-  @apply h-5 w-5 rounded-full bg-primaryColor fixed z-[999] hidden invisible md:visible shadow-primaryColor transition-all ease-in duration-75;
+  @apply h-5 w-5 rounded-full bg-primaryColor fixed z-[999] hidden invisible md:visible shadow-primaryColor transition-all ease-out duration-75;
   pointer-events: none;
 }
 #cursor.hoverCursor {
@@ -136,19 +136,19 @@ video {
   @apply text-white text-lg text-justify md:text-center md:w-2/5;
 }
 /* Down Arrow */
-#main #page1 #downArrow{
+#main #page1 #downArrow {
   @apply hidden md:flex h-56 w-56 rounded-full text-white border-2 border-primaryColor justify-center items-center absolute bottom-0 left-0 m-6 hover:scale-50 hover:bg-primaryColor z-[99] transition-all ease-in duration-100;
   pointer-events: all;
 }
-#main #page1 #downArrow i{
-  @apply text-5xl
+#main #page1 #downArrow i {
+  @apply text-5xl;
 }
 
 /* page 2 */
 
 /* Scroller */
 #main #page2 #scroller {
-  @apply flex gap-10 overflow-scroll py-4;
+  @apply flex gap-10 overflow-x-scroll;
 }
 #scroller::-webkit-scrollbar {
   @apply hidden;
@@ -370,23 +370,104 @@ video {
   @apply w-full bg-gradient-to-r from-lime-500 to-primaryColor text-white py-3 px-6 rounded-lg font-semibold hover:from-lime-600 hover:to-lime-700 transition-all duration-300;
 }
 
-
 /* Quote section */
-#quote{
+#quote {
   @apply w-full my-10;
 }
-#quote #quoteContent{
+#quote #quoteContent {
   @apply mx-auto h-full flex justify-center items-center relative md:w-[80vw] px-[10vw] md:py-8;
 }
-#quote #quoteContent p{
+#quote #quoteContent p {
   @apply font-semibold text-white md:text-3xl text-xl w-full mx-auto text-center;
 }
-#quote #quoteContent img{
+#quote #quoteContent img {
   @apply w-8 h-8 opacity-0 md:opacity-100 md:w-12 md:h-12 absolute;
 }
-#quote #quoteContent #leftQuote{
+#quote #quoteContent #leftQuote {
   @apply top-0 left-0;
 }
-#quote #quoteContent #rightQuote{
+#quote #quoteContent #rightQuote {
   @apply bottom-0 right-0;
+}
+
+/* Footer base styles */
+#footer {
+  @apply bg-black text-gray-400 relative z-[999];
+}
+
+#footer-container {
+  @apply w-full h-full p-6 bg-lime-900 backdrop-blur-md bg-opacity-10;
+}
+
+#footer-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8;
+}
+
+/* Brand section */
+#footer-brand {
+  @apply flex items-center gap-2 text-white mb-4;
+}
+
+#footer-brand-title {
+  @apply text-xl font-bold text-primaryColor;
+}
+
+#footer-description {
+  @apply mb-4;
+}
+
+#footer-social-links {
+  @apply flex gap-4;
+}
+
+#footer-social-links a {
+  @apply text-gray-400 hover:text-primaryColor transition-colors;
+}
+
+/* Quick Links */
+#footer-quick-links-title {
+  @apply text-white font-bold mb-4;
+}
+
+#footer-quick-links-list {
+  @apply space-y-2;
+}
+
+#footer-quick-links-list a {
+  @apply text-gray-400 hover:text-primaryColor transition-colors;
+}
+
+/* Contact Us */
+#footer-contact-title {
+  @apply text-white font-bold mb-4;
+}
+
+#footer-contact-info {
+  @apply space-y-3;
+}
+
+#footer-contact-info div {
+  @apply flex items-center gap-2;
+}
+
+/* Newsletter */
+#footer-newsletter-title {
+  @apply text-white font-bold mb-2;
+}
+
+#footer-newsletter {
+  @apply max-w-md;
+}
+
+#footer-newsletter-input {
+  @apply flex-1 px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-primaryColor;
+}
+
+#footer-newsletter-button {
+  @apply px-4 py-2 bg-primaryColor text-white rounded-lg hover:bg-lime-700 transition-colors;
+}
+
+/* Footer bottom */
+#footer-bottom {
+  @apply mt-12 pt-8 border-t border-gray-800 text-center;
 }
