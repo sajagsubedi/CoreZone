@@ -140,7 +140,7 @@ video {
   @apply hidden md:flex h-56 w-56 rounded-full text-white border-2 border-primaryColor justify-center items-center absolute bottom-0 left-0 m-6 hover:scale-50 hover:bg-primaryColor z-[99] transition-all ease-in duration-100;
   pointer-events: all;
 }
-#main #page1 #downArrow i {
+#main #page1 #downArrow #icon {
   @apply text-5xl;
 }
 
@@ -148,7 +148,7 @@ video {
 
 /* Scroller */
 #main #page2 #scroller {
-  @apply flex gap-10 overflow-x-scroll;
+  @apply flex gap-10 overflow-x-scroll overflow-y-hidden;
 }
 #scroller::-webkit-scrollbar {
   @apply hidden;
@@ -191,7 +191,7 @@ video {
 }
 
 #about #textBox p {
-  @apply text-justify md:text-center text-lg;
+  @apply text-justify md:text-center text-base;
 }
 
 #about .imgDiv {
@@ -249,19 +249,19 @@ video {
   @apply grid grid-cols-1 md:grid-cols-3 gap-8 w-full;
 }
 .planCard {
-  @apply rounded-3xl p-8 h-full text-white hover:scale-105 transition-all ease-in duration-75;
+  @apply rounded-3xl p-6 h-full text-white hover:scale-105 transition-all ease-in duration-75;
 }
-.basicPlan {
+.basic {
   @apply bg-gray-950;
 }
-.standardPlan {
+.standard {
   @apply bg-lime-300 text-black;
 }
-.premiumPlan {
+.premium {
   @apply bg-gray-950;
 }
 .planTitle {
-  @apply text-2xl font-bold mb-4;
+  @apply text-2xl font-bold mb-4 uppercase;
 }
 .planPrice {
   @apply flex items-baseline mb-4 text-primaryColor;
@@ -273,15 +273,18 @@ video {
   @apply ml-2;
 }
 .planDescription {
-  @apply mb-6;
+  @apply mb-5;
 }
 .planFeatures {
   @apply space-y-4;
 }
-.planFeatures li i {
+.planFeatures li {
+  @apply flex gap-1 items-center text-sm;
+}
+.planFeatures li .icon {
   @apply text-primaryColor;
 }
-.standardPlan .planFeatures li i {
+.standardPlan .planFeatures li .icon {
   @apply text-lime-900;
 }
 .standardPlan .planPrice {
@@ -392,7 +395,7 @@ video {
 
 /* Footer base styles */
 #footer {
-  @apply bg-black text-gray-400 relative z-[999];
+  @apply bg-black text-gray-400 relative z-[99];
 }
 
 #footer-container {

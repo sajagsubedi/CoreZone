@@ -37,12 +37,12 @@ Welcome to **CoreZone**, a simple and user-friendly gym website designed to insp
 
 ## Technologies Used
 
-- **HTML**: For structuring the website.
+- **Next.js**: For server-side rendering, routing, and efficient web development.
+- **React.js**: For building interactive and dynamic user interfaces.
 - **CSS**: For styling and layout design.
-- **JavaScript**: For interactivity and dynamic content.
 - **GSAP (GreenSock Animation Platform)**: For smooth animations and transitions.
 - **Tailwind CSS**: For utility-first, responsive, and modern styling.
-- **Vite**: For blazing-fast development and building tools.
+- **Vercel**: For seamless deployment and hosting.
 
 ---
 
