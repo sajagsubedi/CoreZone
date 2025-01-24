@@ -15,7 +15,7 @@ const ContactSection = () => {
       <div id="background-blur-bottom"></div>
       <div id="contact-container">
         <div className="sectionTop">
-          <h2 className="sectionHeading">CONTACT US</h2>
+          <h3 className="sectionHeading">CONTACT US</h3>
           <p className="sectionHeadingParagraph">
             Ready to transform your fitness journey? Reach out to us and let&apos;s
             make it happen together.

@@ -50,7 +50,7 @@ const PlansSection = () => {
   return (
     <section id="plans">
       <div className="sectionTop">
-        <h1 className="sectionHeading">OUR PLANS</h1>
+        <h3 className="sectionHeading">OUR PLANS</h3>
         <p className="sectionHeadingParagraph">
           Choose the perfect plan for your fitness goals.
         </p>

@@ -7,7 +7,7 @@ const AboutSection = () => {
   return (
     <section id="about">
       <div className="sectionTop">
-        <h3 className="sectionHeading">About Us</h3>
+        <h3 className="sectionHeading">ABOUT US</h3>
       </div>
       <div id="aboutContent">
         <div className="imgDiv">
@@ -29,7 +29,7 @@ const AboutSection = () => {
             inclusive space that caters to individuals of all fitness levels.
             Our state-of-the-art gym is equipped with modern workout machines,
             free weights, and functional training areas to support a wide range
-            of fitness routines. Whether you’re looking to build strength,
+            of fitness routines. Whether you&apos;re looking to build strength,
             improve endurance, or enhance flexibility, our certified trainers
             are here to guide you with personalized training plans tailored to
             your unique goals. We offer a variety of classes, including yoga,

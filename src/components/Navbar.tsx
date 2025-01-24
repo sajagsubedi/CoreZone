@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import gsap from "gsap";
-
+import Image from "next/image"
 const Navbar = () => {
   const navRef = useRef<HTMLDivElement | null>(null);
   const menuToggleRef = useRef<HTMLDivElement | null>(null);
@@ -56,7 +56,7 @@ const Navbar = () => {
     <nav id="nav" ref={navRef}>
       <div id="phoneVisible">
         <div id="logo">
-          <img src="/logo.svg" alt="logo" className="h-12 w-auto " />
+          <Image src="/logo.svg" alt="logo" className="h-12 w-auto" width={48} height={48} />
           <h2>CoreZone</h2>
         </div>
         <div id="menuToggle" ref={menuToggleRef} onClick={handleMenuToggle}>

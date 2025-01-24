@@ -14,9 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CoreZone Fitness",
+  title: "CoreZone Fitness - Empower Your Fitness Journey",
   description:
-    "Discover CoreZone Fitness, your ultimate fitness destination in Pokhara. Offering state-of-the-art gym equipment, personal training, group fitness classes, yoga sessions, and holistic wellness programs to help you move, train, and thrive. Explore our plans and start transforming your fitness journey today!",
+    "Discover CoreZone Fitness in Pokhara with top-tier equipment, personal training, group classes, yoga, and wellness programs. Achieve your fitness goals today!",
+  keywords:
+    "CoreZone, core, zone , core zone, corezone fitness, fitness, thrive, move, fitness journey, fitness classes, group fitness, pokhara, gym",
 };
 
 export default function RootLayout({

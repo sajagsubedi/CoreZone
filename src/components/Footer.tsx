@@ -18,7 +18,7 @@ const Footer = () => {
         <div id="footer-grid">
           <div>
             <div id="footer-brand">
-              <Image src="logo.svg" alt="logo" className="h-12 w-auto" />
+              <Image src="logo.svg" alt="logo" className="h-12 w-auto" width={48} height={48} />
               <span id="footer-brand-title">CoreZone</span>
             </div>
             <p id="footer-description">
