@@ -1,4 +1,5 @@
-import React from "react";
+import gsap from "gsap";
+import React, { useEffect, useRef } from "react";
 import {
   FaPhoneAlt,
   FaFacebookF,
@@ -9,20 +10,75 @@ import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
 const ContactSection = () => {
+  const sectionHeadingRef = useRef<HTMLHeadingElement | null>(null);
+  const sectionHeadingTextRef = useRef<HTMLParagraphElement | null>(null);
+  const contactFormRef = useRef(null);
+  const contactInfoRef = useRef(null);
+
+  useEffect(() => {
+    // ----------------------------------------------
+    //Animate the section Heading and heading text
+    [sectionHeadingRef, sectionHeadingTextRef].forEach((item) => {
+      gsap.from(item.current, {
+        scrollTrigger: {
+          trigger: item.current,
+          start: "top 80%", // Start animation when the top of the element reaches 80% of the viewport
+          end: "bottom 60%",
+          scrub: 1, // Smooth scrubbing with a 1-second delay
+        },
+        opacity: 0,
+        y: 100, // Slide up effect (from below)
+        duration: 1,
+        ease: "power2.out",
+      });
+    });
+    // ----------------------------------------------
+    // anmations for contact infos
+    gsap.from(contactInfoRef.current, {
+      scrollTrigger: {
+        trigger: contactInfoRef.current,
+        start: "top 80%",
+        end: "bottom 60%",
+        scrub: 1, // Smooth scrubbing with a 1-second delay
+      },
+      opacity: 0,
+      x: -100, // Slide in from the left
+      duration: 1,
+      ease: "power2.out",
+    });
+
+    // ----------------------------------------------
+    // Contact info animation
+    gsap.from(contactFormRef.current, {
+      scrollTrigger: {
+        trigger: contactFormRef.current,
+        start: "top 80%",
+        end: "bottom 60%",
+        scrub: 1, // Smooth scrubbing with a 1-second delay
+      },
+      opacity: 0,
+      x: 100, // Slide in from the right
+      duration: 1,
+      ease: "power2.out",
+    });
+  }, []);
+
   return (
     <section id="contact" className="contact-section">
       <div id="background-blur-top"></div>
       <div id="background-blur-bottom"></div>
       <div id="contact-container">
         <div className="sectionTop">
-          <h3 className="sectionHeading">CONTACT US</h3>
-          <p className="sectionHeadingParagraph">
-            Ready to transform your fitness journey? Reach out to us and let&apos;s
-            make it happen together.
+          <h3 className="sectionHeading" ref={sectionHeadingRef}>
+            CONTACT US
+          </h3>
+          <p className="sectionHeadingParagraph" ref={sectionHeadingTextRef}>
+            Ready to transform your fitness journey? Reach out to us and
+            let&apos;s make it happen together.
           </p>
         </div>
         <div id="contact-content">
-          <div id="contact-info">
+          <div id="contact-info" ref={contactInfoRef}>
             <div className="info-item">
               <div className="icon-container">
                 <FaLocationDot />
@@ -32,6 +88,7 @@ const ContactSection = () => {
                 <p className="info-description">Pokhara-11, Phoolbari</p>
               </div>
             </div>
+
             <div className="info-item">
               <div className="icon-container">
                 <FaPhoneAlt />
@@ -50,6 +107,7 @@ const ContactSection = () => {
                 <p className="info-description">sajagsubedi03@gmail.com</p>
               </div>
             </div>
+
             <div id="social-links">
               <h3 id="social-title">Follow Us</h3>
               <div id="social-icons">
@@ -77,7 +135,7 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
-          <form id="contact-form">
+          <form id="contact-form" ref={contactFormRef}>
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input type="text" id="name" className="form-input" required />

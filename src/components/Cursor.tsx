@@ -1,37 +1,50 @@
 "use client";
-
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Cursor: React.FC = () => {
   const crsr = useRef<HTMLDivElement | null>(null);
+  const [isCursor, setIsCursor] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (crsr.current) {
-        crsr.current.style.display = "block";
         crsr.current.style.left = `${e.clientX}px`;
         crsr.current.style.top = `${e.clientY}px`;
       }
     };
 
     const handleMouseEnter = () => {
-      if (crsr.current) {
-        crsr.current.style.display = "block";
-      }
+      console.log("Mouse Enter");
+      setIsCursor(true); // Show the cursor
+    };
+
+    const handleMouseLeave = () => {
+      console.log("Mouse Leave");
+      setIsCursor(false); // Hide the cursor
     };
 
     // Add event listeners
     document.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseenter", handleMouseEnter);
+    document.addEventListener("mouseover", handleMouseEnter); // Use 'mouseover' for entering the document
+    document.addEventListener("mouseout", handleMouseLeave); // Use 'mouseout' for leaving the document
 
     // Cleanup event listeners on component unmount
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseenter", handleMouseEnter);
+      document.removeEventListener("mouseover", handleMouseEnter);
+      document.removeEventListener("mouseout", handleMouseLeave);
     };
   }, []);
 
-  return <div id="cursor" ref={crsr}></div>;
+  return (
+    <div
+      id="cursor"
+      ref={crsr}
+      style={{
+        display: isCursor ? "block" : "none",
+      }}
+    ></div>
+  );
 };
 
 export default Cursor;

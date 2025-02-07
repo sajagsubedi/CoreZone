@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import gsap from "gsap";
-import Image from "next/image"
+import Image from "next/image";
 const Navbar = () => {
   const navRef = useRef<HTMLDivElement | null>(null);
   const menuToggleRef = useRef<HTMLDivElement | null>(null);
@@ -23,8 +23,8 @@ const Navbar = () => {
       scrollTrigger: {
         trigger: "#nav",
         scroller: "body",
-        start: "top -10%",
-        end: "top -11%",
+        start: "top -5%",
+        end: "top -6%",
         scrub: 2,
       },
     });
@@ -56,7 +56,13 @@ const Navbar = () => {
     <nav id="nav" ref={navRef}>
       <div id="phoneVisible">
         <div id="logo">
-          <Image src="/logo.svg" alt="logo" className="h-12 w-auto" width={48} height={48} />
+          <Image
+            src="/logo.svg"
+            alt="logo"
+            className="h-12 w-auto"
+            width={48}
+            height={48}
+          />
           <h2>CoreZone</h2>
         </div>
         <div id="menuToggle" ref={menuToggleRef} onClick={handleMenuToggle}>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 import { FaCheck } from "react-icons/fa";
 
 const plans = [
@@ -46,19 +47,82 @@ const plans = [
   },
 ];
 
+interface positionalValType {
+  x?: number;
+  y?: number;
+}
+
 const PlansSection = () => {
+  const sectionHeadingRef = useRef<HTMLHeadingElement | null>(null);
+  const sectionHeadingTextRef = useRef<HTMLParagraphElement | null>(null);
+
+  const planCardsRef = useRef<(HTMLDivElement | null)[]>([]); // Array to store refs for each plan card
+
+  useEffect(() => {
+    // ----------------------------------------------
+    //Animate the section Heading and heading text
+    [sectionHeadingRef, sectionHeadingTextRef].forEach((item) => {
+      gsap.from(item.current, {
+        scrollTrigger: {
+          trigger: item.current,
+          start: "top 80%", // Start animation when the top of the element reaches 80% of the viewport
+          end: "bottom 60%",
+          scrub: 1, // Smooth scrubbing with a 1-second delay
+        },
+        opacity: 0,
+        y: 100, // Slide up effect (from below)
+        duration: 1,
+        ease: "power2.out",
+      });
+    });
+
+    // Initialize ScrollTrigger animations for each plan card
+    planCardsRef.current.forEach((card, index) => {
+      if (card) {
+        const positionalVal: positionalValType = {};
+        if (index == 0) {
+          positionalVal.x = -100;
+        } else if (index == 1) {
+          positionalVal.y = 100;
+        } else {
+          positionalVal.x = 100;
+        }
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%", // Start animation when the top of the card reaches 80% of the viewport
+            end: "bottom 60%",
+            scrub: 1, // Smooth scrubbing ensures the animation continues even if scrolling stops
+          },
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+          ...positionalVal,
+        });
+      }
+    });
+  }, []);
+
   return (
     <section id="plans">
       <div className="sectionTop">
-        <h3 className="sectionHeading">OUR PLANS</h3>
-        <p className="sectionHeadingParagraph">
+        <h3 className="sectionHeading" ref={sectionHeadingRef}>
+          OUR PLANS
+        </h3>
+        <p className="sectionHeadingParagraph" ref={sectionHeadingTextRef}>
           Choose the perfect plan for your fitness goals.
         </p>
       </div>
       <div className="plansGrid">
-        {plans.map((plan) => {
+        {plans.map((plan, index) => {
           return (
-            <div className={`planCard ${plan.type}`} key={plan.id}>
+            <div
+              className={`planCard ${plan.type}`}
+              key={plan.id}
+              ref={(el) => {
+                planCardsRef.current[index] = el; // Assign the DOM element to the ref array
+              }}
+            >
               <h3 className="planTitle">{plan.name}</h3>
               <div className="planPrice">
                 <span className="priceAmount">{plan.price}</span>
@@ -70,7 +134,7 @@ const PlansSection = () => {
                   return (
                     <li key={id}>
                       <span className="mr-3">
-                        <FaCheck className="icon"/>
+                        <FaCheck className="icon" />
                       </span>
                       {feature}
                     </li>

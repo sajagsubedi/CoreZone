@@ -1,16 +1,98 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
 import About1 from "@/assets/about-1.jpg";
 import About2 from "@/assets/about-2.jpg";
 
 const AboutSection = () => {
+  const aboutContentRef = useRef<HTMLDivElement | null>(null);
+  const sectionHeadingRef = useRef<HTMLHeadingElement | null>(null);
+  const leftImageRef = useRef<HTMLDivElement | null>(null);
+  const rightImageRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (
+      aboutContentRef.current &&
+      leftImageRef.current &&
+      rightImageRef.current &&
+      sectionHeadingRef.current
+    ) {
+      // ----------------------------------------------
+      //Animate the section Heading
+      gsap.from(sectionHeadingRef.current, {
+        scrollTrigger: {
+          trigger: sectionHeadingRef.current,
+          start: "top 80%", // Start animation when the top of the element reaches 80% of the viewport
+          end: "bottom 60%",
+          scrub: 1, // Smooth scrubbing with a 1-second delay
+        },
+        opacity: 0,
+        y: 100, // Slide up effect (from below)
+        duration: 1,
+        ease: "power2.out",
+      });
+
+      // -------------------------------------
+      // Animate the text box (slide up from below)
+      gsap.from(aboutContentRef.current.querySelector("#textBox"), {
+        scrollTrigger: {
+          trigger: aboutContentRef.current.querySelector("#textBox"),
+          start: "top 80%", // Start animation when the top of the element reaches 80% of the viewport
+          end: "bottom 60%",
+          scrub: 1, // Smooth scrubbing with a 1-second delay
+        },
+        opacity: 0,
+        y: 100, // Slide up effect (from below)
+        duration: 1,
+        ease: "power2.out",
+      });
+
+      //--------------------------------------
+      // Animate the first image div (slide in from the left)
+      if (leftImageRef.current) {
+        gsap.from(leftImageRef.current, {
+          scrollTrigger: {
+            trigger: leftImageRef.current,
+            start: "top 80%",
+            end: "bottom 60%",
+            scrub: 1, // Smooth scrubbing with a 1-second delay
+          },
+          opacity: 0,
+          x: -100, // Slide in from the left
+          duration: 1,
+          ease: "power2.out",
+        });
+      }
+
+      // --------------------------------------
+      // Animate the second image div (slide in from the right)
+      if (rightImageRef.current) {
+        gsap.from(rightImageRef.current, {
+          scrollTrigger: {
+            trigger: rightImageRef.current,
+            start: "top 80%",
+            end: "bottom 60%",
+            scrub: 1, // Smooth scrubbing with a 1-second delay
+          },
+          opacity: 0,
+          x: 100, // Slide in from the right
+          duration: 1,
+          ease: "power2.out",
+        });
+      }
+    }
+  }, []);
+
   return (
     <section id="about">
       <div className="sectionTop">
-        <h3 className="sectionHeading">ABOUT US</h3>
+        <h3 className="sectionHeading" ref={sectionHeadingRef}>
+          ABOUT US
+        </h3>
       </div>
-      <div id="aboutContent">
-        <div className="imgDiv">
+      <div id="aboutContent" ref={aboutContentRef}>
+        {/* First Image Div */}
+        <div className="imgDiv" ref={leftImageRef}>
           <div className="overlay">
             <h5>Elevate Your Fitness Journey</h5>
             <p>
@@ -21,6 +103,7 @@ const AboutSection = () => {
           <Image src={About1} alt="Cutting-edge gym equipment" />
         </div>
 
+        {/* Text Box */}
         <div id="textBox">
           <p>
             Welcome to <span className="highlightedText"> CoreZone</span>, your
@@ -48,7 +131,8 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <div className="imgDiv">
+        {/* Second Image Div */}
+        <div className="imgDiv" ref={rightImageRef}>
           <div className="overlay">
             <h5>Lift. Conquer. Repeat.</h5>
             <p>From beginners to pros, this is where champions are forged.</p>
