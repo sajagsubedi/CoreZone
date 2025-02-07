@@ -23,8 +23,8 @@ const Navbar = () => {
       scrollTrigger: {
         trigger: "#nav",
         scroller: "body",
-        start: "top -5%",
-        end: "top -6%",
+        start: "top -10%",
+        end: "top -11%",
         scrub: 2,
       },
     });
