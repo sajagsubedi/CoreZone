@@ -24,33 +24,10 @@ const Navbar = () => {
         trigger: "#nav",
         scroller: "body",
         start: "top -10%",
-        end: "top -11%",
+        end: "top -15%",
         scrub: 2,
       },
     });
-    const navLinks =
-      document.querySelectorAll<HTMLAnchorElement>("#nav #menu li a");
-    const crsr = document.querySelector("#cursor");
-
-    // Add hover effects to navigation links
-    navLinks.forEach((navLink) => {
-      navLink.addEventListener("mouseenter", () => {
-        crsr?.classList.add("hoverCursor");
-      });
-      navLink.addEventListener("mouseout", () => {
-        crsr?.classList.remove("hoverCursor");
-      });
-    });
-    return () => {
-      navLinks.forEach((navLink) => {
-        navLink.removeEventListener("mouseenter", () => {
-          crsr?.classList.add("hoverCursor");
-        });
-        navLink.removeEventListener("mouseout", () => {
-          crsr?.classList.remove("hoverCursor");
-        });
-      });
-    };
   });
   return (
     <nav id="nav" ref={navRef}>
@@ -72,10 +49,16 @@ const Navbar = () => {
       <ul id="menu">
         {["Home", "About", "Services", "Plans", "Contact"].map((item) => (
           <li className="navLinkItem" key={item}>
-            <Link href={`#${item.toLowerCase()}`} className="navLink">
+            <Link
+              href={`#${item.toLowerCase()}`}
+              className="navLink cursorLink"
+            >
               {item}
             </Link>
-            <Link href={`#${item.toLowerCase()}`} className="hoverLink">
+            <Link
+              href={`#${item.toLowerCase()}`}
+              className="hoverLink cursorLink"
+            >
               {item}
             </Link>
           </li>

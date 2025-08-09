@@ -24,8 +24,8 @@ const AboutSection = () => {
       gsap.from(sectionHeadingRef.current, {
         scrollTrigger: {
           trigger: sectionHeadingRef.current,
-          start: "top 80%", // Start animation when the top of the element reaches 80% of the viewport
-          end: "bottom 60%",
+          start: "top 90%", // Start animation when the top of the element reaches 80% of the viewport
+          end: "bottom 90%",
           scrub: 1, // Smooth scrubbing with a 1-second delay
         },
         opacity: 0,
@@ -39,8 +39,8 @@ const AboutSection = () => {
       gsap.from(aboutContentRef.current.querySelector("#textBox"), {
         scrollTrigger: {
           trigger: aboutContentRef.current.querySelector("#textBox"),
-          start: "top 80%", // Start animation when the top of the element reaches 80% of the viewport
-          end: "bottom 60%",
+          start: "top 90%", // Start animation when the top of the element reaches 80% of the viewport
+          end: "bottom 90%",
           scrub: 1, // Smooth scrubbing with a 1-second delay
         },
         opacity: 0,
@@ -55,8 +55,8 @@ const AboutSection = () => {
         gsap.from(leftImageRef.current, {
           scrollTrigger: {
             trigger: leftImageRef.current,
-            start: "top 80%",
-            end: "bottom 60%",
+            start: "top 90%",
+            end: "bottom 90%",
             scrub: 1, // Smooth scrubbing with a 1-second delay
           },
           opacity: 0,
@@ -72,8 +72,8 @@ const AboutSection = () => {
         gsap.from(rightImageRef.current, {
           scrollTrigger: {
             trigger: rightImageRef.current,
-            start: "top 80%",
-            end: "bottom 60%",
+            start: "top 90%",
+            end: "bottom 90%",
             scrub: 1, // Smooth scrubbing with a 1-second delay
           },
           opacity: 0,

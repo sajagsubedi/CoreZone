@@ -49,9 +49,9 @@ const ServicesSection = () => {
       gsap.from(item.current, {
         scrollTrigger: {
           trigger: item.current,
-          start: "top 80%", // Start animation when the top of the element reaches 80% of the viewport
-          end: "bottom 60%",
-          scrub: 1, // Smooth scrubbing with a 1-second delay
+          start: "top 90%", // Start animation when the top of the element reaches 80% of the viewport
+          end: "bottom 90%",
+          scrub: true,
         },
         opacity: 0,
         y: 100, // Slide up effect (from below)
@@ -67,9 +67,9 @@ const ServicesSection = () => {
         gsap.from(card, {
           scrollTrigger: {
             trigger: card,
-            start: "top 80%", // Start animation when the top of the card reaches 80% of the viewport
-            end: "bottom 60%",
-            scrub: 1, // Smooth scrubbing with a 2-second delay
+            start: "top 90%", // Start animation when the top of the card reaches 80% of the viewport
+            end: "bottom 90%",
+            scrub: true,
           },
           opacity: 0,
           y: 50, // Slide up effect

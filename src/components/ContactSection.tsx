@@ -24,9 +24,9 @@ const ContactSection = () => {
       gsap.from(item.current, {
         scrollTrigger: {
           trigger: item.current,
-          start: "top 80%", // Start animation when the top of the element reaches 80% of the viewport
-          end: "bottom 60%",
-          scrub: 1, // Smooth scrubbing with a 1-second delay
+          start: "top 90%", // Start animation when the top of the element reaches 80% of the viewport
+          end: "bottom 90%",
+          scrub: true,
         },
         opacity: 0,
         y: 100, // Slide up effect (from below)
@@ -39,9 +39,9 @@ const ContactSection = () => {
     gsap.from(contactInfoRef.current, {
       scrollTrigger: {
         trigger: contactInfoRef.current,
-        start: "top 80%",
-        end: "bottom 60%",
-        scrub: 1, // Smooth scrubbing with a 1-second delay
+        start: "top 90%",
+        end: "bottom 90%",
+        scrub: true,
       },
       opacity: 0,
       x: -100, // Slide in from the left
@@ -54,9 +54,9 @@ const ContactSection = () => {
     gsap.from(contactFormRef.current, {
       scrollTrigger: {
         trigger: contactFormRef.current,
-        start: "top 80%",
-        end: "bottom 60%",
-        scrub: 1, // Smooth scrubbing with a 1-second delay
+        start: "top 90%",
+        end: "bottom 90%",
+        scrub: true,
       },
       opacity: 0,
       x: 100, // Slide in from the right
@@ -116,21 +116,21 @@ const ContactSection = () => {
                 <a
                   href="https://www.facebook.com/sajagsubedi3"
                   target="_blank"
-                  className="social-link"
+                  className="social-link cursorLink"
                 >
                   <FaFacebookF />
                 </a>
                 <a
                   href="https://x.com/sajag_subedi"
                   target="_blank"
-                  className="social-link"
+                  className="social-link cursorLink"
                 >
                   <FaTwitter />
                 </a>
                 <a
                   href="https://www.instagram.com/sajagsubedi/"
                   target="_blank"
-                  className="social-link"
+                  className="social-link cursorLink"
                 >
                   <FaInstagram />
                 </a>

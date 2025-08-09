@@ -17,23 +17,35 @@ const QuoteSection = () => {
         x: 70,
         y: 20,
         scrollTrigger: {
-          trigger: "#leftQuote",
+          trigger: "#quoteContent",
           scroller: "body",
-          start: "top 60%",
-          end: "top 80%",
-          scrub: 2,
+          start: "bottom 100%",
+          end: "top 20%",
+          scrub: true,
         },
       });
       gsap.to("#rightQuote", {
         x: -70,
         y: -20,
         scrollTrigger: {
-          trigger: "#leftQuote",
+          trigger: "#quoteContent",
           scroller: "body",
-          start: "top 60%",
-          end: "top 80%",
-          scrub: 2,
+          start: "bottom 100%",
+          end: "top 20%",
+          scrub: true,
         },
+      });
+
+      gsap.from("#quoteContent p", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: "#quoteContent p",
+          scroller: "body",
+          start: "top 100%",
+          end: "top 90%",
+          scrub: true,
+        },
+        duration: 1,
       });
     });
 
@@ -46,7 +58,7 @@ const QuoteSection = () => {
           scroller: "body",
           start: "top 70%",
           end: "top 90%",
-          scrub: 2,
+          scrub: true,
         },
       });
       gsap.to("#rightQuote", {
@@ -56,7 +68,7 @@ const QuoteSection = () => {
           scroller: "body",
           start: "top 70%",
           end: "top 90%",
-          scrub: 2,
+          scrub: true,
         },
       });
     });

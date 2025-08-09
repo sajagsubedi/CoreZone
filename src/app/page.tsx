@@ -30,6 +30,28 @@ const App = () => {
         end: "top -70%",
       },
     });
+    const cursorLinks = document.querySelectorAll(".cursorLink");
+    const crsr = document.querySelector("#cursor");
+
+    // Add hover effects to  cursor on mouse enter
+    cursorLinks.forEach((cursorLink) => {
+      cursorLink.addEventListener("mouseenter", () => {
+        crsr?.classList.add("hoverCursor");
+      });
+      cursorLink.addEventListener("mouseout", () => {
+        crsr?.classList.remove("hoverCursor");
+      });
+    });
+    return () => {
+      cursorLinks.forEach((cursorLink) => {
+        cursorLink.removeEventListener("mouseenter", () => {
+          crsr?.classList.add("hoverCursor");
+        });
+        cursorLink.removeEventListener("mouseout", () => {
+          crsr?.classList.remove("hoverCursor");
+        });
+      });
+    };
   }, []);
 
   return (

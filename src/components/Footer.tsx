@@ -18,7 +18,13 @@ const Footer = () => {
         <div id="footer-grid">
           <div>
             <div id="footer-brand">
-              <Image src="logo.svg" alt="logo" className="h-12 w-auto" width={48} height={48} />
+              <Image
+                src="logo.svg"
+                alt="logo"
+                className="h-12 w-auto"
+                width={48}
+                height={48}
+              />
               <span id="footer-brand-title">CoreZone</span>
             </div>
             <p id="footer-description">
@@ -61,19 +67,29 @@ const Footer = () => {
             <h3 id="footer-quick-links-title">Quick Links</h3>
             <ul id="footer-quick-links-list">
               <li>
-                <Link href="/">Home</Link>
+                <Link href="/" className="cursorLink">
+                  Home
+                </Link>
               </li>
               <li>
-                <a href="#about">About</a>
+                <a href="#about" className="cursorLink">
+                  About
+                </a>
               </li>
               <li>
-                <a href="#services">Services</a>
+                <a href="#services" className="cursorLink">
+                  Services
+                </a>
               </li>
               <li>
-                <a href="#plans">Plans</a>
+                <a href="#plans" className="cursorLink">
+                  Plans
+                </a>
               </li>
               <li>
-                <a href="#contact">Contact</a>
+                <a href="#contact" className="cursorLink">
+                  Contact
+                </a>
               </li>
             </ul>
           </div>
@@ -106,7 +122,11 @@ const Footer = () => {
                   placeholder="Enter your email"
                   required
                 />
-                <button id="footer-newsletter-button" type="submit">
+                <button
+                  id="footer-newsletter-button"
+                  type="submit"
+                  className="cursorLink"
+                >
                   <FaPaperPlane />
                 </button>
               </div>
